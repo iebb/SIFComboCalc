@@ -1,0 +1,2 @@
+# SIFComboCalc
+"weighted combo" calculator
