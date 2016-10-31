@@ -1,0 +1,51 @@
+
+.sub {
+	font-size: 50%;
+	color:grey;
+	line-height: 100%;
+}
+.tt-menu {
+	max-height: 450px;
+	overflow-y: auto;
+}
+.diff {
+	font-family: sans-serif;
+	font-size: 50%;
+	color: white;
+	display: inherit;
+	text-align: center;
+}
+.diff-EASY {
+	border: 3px solid rgb(160, 212, 104);
+	background-color: rgb(160, 212, 104);
+}
+.diff-NORMAL {
+	border: 3px solid rgb(93, 156, 236);
+	background-color: rgb(93, 156, 236);
+}
+.diff-HARD {
+	border: 3px solid rgb(218, 68, 83);
+	background-color: rgb(218, 68, 83);
+}
+.diff-EXPERT {
+	border: 3px solid rgb(246, 187, 66);
+	background-color: rgb(255, 206, 84);
+}
+.diff-TECHNICAL {
+	border: 3px solid rgb(150, 122, 220);
+	background-color: rgb(150, 122, 220);
+}
+.diff-MASTER {
+	border: 3px solid rgb(101, 109, 120);
+	background-color: rgb(101, 109, 120);
+}
+.single {
+	border-radius: 15px; width: 135px; display: inline-block;
+	margin: 5px;
+}
+body {
+	font-family: Helvetica, Calibri;
+}
+td {
+	word-break: break-all;
+}

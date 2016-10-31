@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="utf-8">
+	<title>LLSIF Combo Calculator</title>
+	<meta name="author" content="" />
+
+	<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+	<script src="//cdn.bootcss.com/typeahead.js/0.11.1/typeahead.jquery.js"></script>
+	<script src="//cdn.bootcss.com/handlebars.js/4.0.5/handlebars.js"></script>
+	<link rel="stylesheet" href="./sifbox.css">
+	<link rel="stylesheet" href="https://bootswatch.com/cosmo/bootstrap.min.css">
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<center>
+		<div class="container" style="">
+			<h1>LLSIF Combo Calculator</h1>
+			<div style="min-height: 158px; border-radius:15px; background: rgba(75,75,75,0.25); ">
+				<div id="lives">
+				</div>
+			</div>
+			<br />
+			<div id="inputbox" style="padding-top: 1em; height: 80px;">
+				<input class="typeahead" type="text" placeholder="Select Song">
+			</div>
+
+
+			<div style="font-family: Consolas; border-radius:15px; background: rgba(75,75,75,0.25); padding-top: 1em;">
+				<p id="result" style="font-size: 24px; ">
+				</p>
+				<table class="table" cellspacing="0">
+					<tbody>
+						<tr><th colspan="2">Position</th>
+							<th>L1</th><th>L2</th><th>L3</th><th>L4</th>
+							<th style="background: yellow">C</th>
+							<th>R4</th><th>R3</th><th>R2</th><th>R1</th>
+						</tr>
+						<tr style="" class="to-init"><th colspan="2">Combo Weight</th></tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</center>
+
+
+	<script id="live-template" type="text/x-handlebars-template">
+		<div data-idx="{{index}}" class="single diff-{{difficulty_text}}">
+			<img class="avatar" src="//rawfile.loveliv.es/{{live_icon_asset}}" style="width: 128px; border-radius: 15px;" >
+			<span class="diff">{{difficulty_text}}</span>
+			<br/>
+			<button class="badge" onclick="move(this, -1)">&lt;</button>
+			<button class="badge" style="background: red" onclick="remove(this)">X</button>
+			<button class="badge" onclick="move(this, 1)">&gt;</button>
+		</div>
+	</script>
+
+	<script id="result-template" type="text/x-handlebars-template">
+		<div class="ProfileCard u-cf">
+			<div style="float:left; border-radius: 15px; " class="diff-{{difficulty_text}} diffb-{{difficulty_text}}">
+				<img class="avatar" src="//rawfile.loveliv.es/{{live_icon_asset}}" style="width: 80px; float:left; border-radius: 15px; " >
+				<span class="diff">{{difficulty_text}}</span>
+			</div>
+			<div style="width: calc(100% - 100px); float:left; padding-left: 10px;">
+				<p>{{name}}</p> 
+				<p class="sub" style="line-height: 1.6">No. {{live_setting_id}} / {{stage_level}} ★ / {{s_rank_combo}} x</p>
+				<p class="sub">EN: {{name_translations.english}}</p>
+				<p class="sub">KR: {{name_translations.korean}}</p>
+				<p class="sub">CN: {{name_translations.chinese}}</p>
+			</div>
+			<div style="clear:both"></div>
+		</div>
+	</script>
+
+	<script src="./sifbox.js"></script>
+	<script src="./script.js"></script>
+</body>
+</html>
